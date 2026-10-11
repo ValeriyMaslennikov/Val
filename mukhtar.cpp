@@ -1,43 +1,33 @@
 #include <iostream>
 using namespace std;
 
+void printrotate(char m[100][100], int col, int row){
+    for (int j = col - 1; j >= 0; --j)
+    {
+        for (int i = 0; i < row; ++i)
+        {
+            cout << m[i][j];
+        }
+        cout << '\n';
+    }
+}
+
 int main(){
-	int Vv;// - максимальная скорость Вовы.
-	int Vm; //- скорость киберпса.
-	int L; //- начальное расстояние от киберпса до Вовы.
-	int K;// - начальное расстояние от Вовы до забора.
-	int N;// - начальное количество мешков у Вовы.
+    int n, m;
+    cin >> n >> m;
 
-	cin >> Vv;
-	cin >> Vm;
-	cin >> L;
-	cin >> K;
-	cin >> N;
+    char numbers[100][100];
 
-	int Xm = 0;
-	int Xv = L;
-	int Xb = L+K;
-	int Vt = Vv - N;
+    cin.get(); // забираем '\n' после m
 
-	while(Xm<=Xb+Vm){
-		if (N>0)
-		{
-			N--;
-			Vt++;
-		}
-		Xm+=Vm;
-		Xv+=Vt;
-		if (Xv>Xb && Xm<=Xb || Xv >= Xb && Xm<Xb)
-		{
-			cout << N;
-			return 0;
-		}
-		if (Xm>=Xv)
-		{
-			cout << 0;
-			return 0;
-		}
-	}
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < m; j++){
+            cin.get(numbers[i][j]);
+        }
+        cin.get(); // забираем '\n' после строки
+    }
 
-	return 0;
+    printrotate(numbers, m, n);
+
+    return 0;
 }

@@ -17,7 +17,7 @@ int main(){
 	cin >> n;
 	if (n==1)
 	{
-		cout <<2 <<endl;
+		cout <<2<< "\a" <<endl;
 		return 88;
 	}
 	int s = 1;
