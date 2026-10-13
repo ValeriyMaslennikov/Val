@@ -3,13 +3,13 @@ import signal_generator as sg
 import time
 
 
-amplitude = 3.2
-signal_frequency = 10
-sampling_frequency = 1000
+amplitude = 2
+signal_frequency = 2
+sampling_frequency = 10
 
 
 try:
-    dac = r2r.R2R_DAC()
+    dac = r2r.R2R_DAC([16, 20, 21, 25, 26, 17, 27, 22], 3.183)
 
     start_time = time.time()
 

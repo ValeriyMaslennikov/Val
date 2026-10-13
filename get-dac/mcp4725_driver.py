@@ -60,5 +60,7 @@ if __name__ == "__main__":
         dac.set_voltage(0.0)
         dac.set_voltage(2.5)
         dac.set_voltage(5.0)
+
+        dac.set_voltage(int(input("Введите напряжение: ")))
     finally:
         dac.deinit()

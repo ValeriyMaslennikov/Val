@@ -9,7 +9,7 @@ sampling_frequency = 1000
 
 
 try:
-    dac = pwm.PWM_DAC()
+    dac = pwm.PWM_DAC(12, 500, 3.290, True)
 
     start_time = time.time()
 
@@ -21,7 +21,7 @@ try:
             current_time
         )
 
-        dac.set_voltage(voltage)
+        dac.set_voltage(voltage/2)
 
         sg.wait_for_sampling_period(sampling_frequency)
 
