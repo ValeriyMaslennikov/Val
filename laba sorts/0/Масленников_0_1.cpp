@@ -68,18 +68,18 @@ void selection_sort(vector<int>& a) {
 }
 
 int main() {
-    ofstream f("sorts.csv");
+    ofstream f("sorts_1.csv");
 
     f << "N,bubble,insertion,selection\n";
 
     // Размеры массивов
-    for (int n = 100; n <= 10000; n += 100) {
+    for (int n = 10; n <= 10000; n += 10) {
         vector<int> original(n);
 
         // Генерируем массив один раз,
         // чтобы генерация не попадала в измерение времени
         for (int i = 0; i < n; i++) {
-            original[i] = rand_uns(0, 1000000);
+            original[i] = rand_uns(-1000000, 1000000);
         }
 
         vector<int> a;

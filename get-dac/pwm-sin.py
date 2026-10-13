@@ -9,7 +9,7 @@ sampling_frequency = 1000
 
 
 try:
-    dac = pwm.PWM_DAC()
+    dac = pwm.PWM_DAC(12, 500, 3.290, True)
 
     start_time = time.time()
 
